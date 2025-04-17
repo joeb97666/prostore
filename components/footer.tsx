@@ -7,7 +7,10 @@ const Footer = () => {
     return ( <footer className="border-t">
         <div className="p-5 flex-center">
         
-            {currentYear} {APP_NAME}. ALL RIGHTS RESERVED.
+            {currentYear} {APP_NAME}. 
+
+            <br></br>
+<p className="p-5 flex-center">ALL RIGHTS RESERVED.</p>
         </div>
 
     </footer> );
