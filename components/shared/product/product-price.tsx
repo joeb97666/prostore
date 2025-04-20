@@ -1,3 +1,4 @@
+//product-price.tsx
 import { cn } from "@/lib/utils";
 
 const ProductPrice = ({ value, className}: {value: number; className?:

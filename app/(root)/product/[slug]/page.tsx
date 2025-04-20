@@ -1,3 +1,4 @@
+//app/(root)/product/[slug]/page.tsx
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { getProductBySlug } from '@/lib/actions/product.actions';
@@ -68,7 +69,7 @@ const ProductDetailsPage = async (props: {
                       productId: product.id,
                       name: product.name,
                       slug: product.slug,
-                      price: product.price.toFixed(2),
+                      price: String(product.price),
                       qty: 1,
                       image: product.images[0],
                     }} />
