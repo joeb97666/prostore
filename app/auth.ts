@@ -4,7 +4,7 @@ import { prisma } from '@/db/prisma';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { compareSync } from 'bcrypt-ts-edge';
 import type { NextAuthConfig } from 'next-auth';
-import { cookies } from 'next/headers';
+//import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 export const config = {
@@ -69,6 +69,8 @@ export const config = {
                 return session;
 
             },
+            
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
             async jwt( { token, user, trigger, session }: any) {
                 // Assign user fields to token 
                 if (user){
@@ -88,6 +90,7 @@ export const config = {
                 return token;    
             },
 
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
             authorized({ request, auth}: any ){
                 // Check for session cart cookie.
                 if (!request.cookies.get('sessionCartId')) {
