@@ -9,8 +9,7 @@ const Footer = () => {
         
             {currentYear} {APP_NAME}. 
 
-            <br></br>
-<p className="p-5 flex-center">ALL RIGHTS RESERVED.</p>
+<p className="p-5 flex-center">All Rights Reserved.</p>
         </div>
 
     </footer> );

@@ -5,6 +5,7 @@ import { EllipsisVertical, ShoppingCartIcon, UserIcon } from "lucide-react";
 
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
+import UserButton from "@/components/shared/header/user-button"
 
 
 const Menu = () => {
@@ -16,11 +17,9 @@ const Menu = () => {
                         <ShoppingCartIcon/> Cart
                     </Link>
                 </Button>
-                <Button asChild >
-                    <Link href='/sign-in'>
-                        <UserIcon/> Sign In
-                    </Link>
-                </Button>
+                <UserButton>
+
+                </UserButton>
 
         </nav>
         <nav className="md:hidden">
@@ -31,11 +30,7 @@ const Menu = () => {
                 <SheetContent className="flex flex-col items-start">
                     <SheetTitle>Menu</SheetTitle>
                     <ModeToggle/>
-                    <Button asChild variant={"ghost"}>
-                        <Link href='/cart'>
-                            <ShoppingCartIcon/> Cart
-                        </Link>
-                    </Button>
+                    <UserButton/>
                     <Button asChild >
                     <Link href='/sign-in'>
                         <UserIcon/> Sign In
