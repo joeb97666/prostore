@@ -11,14 +11,17 @@ const Header = () => {
         <div className='wrapper flex-between'>
             <div className='flex-start'>
                 <Link href='/' className='flex-start'>
-                  <Image src='/images/logo.png' 
+                <span className=" lg:block font-bold text-sm italic text-center">
+                     <Image src='/images/logo.png' 
+                            className="hidden lg:block font-bold text-sm italic text-center"
                          alt={'${APP_NAME} logo'} 
                          height={150}
                          width={200}
                          priority={true}></Image>
-                    <span className="hidden lg:block font-bold text-2xl ml-3">
-                    {APP_NAME}
+                         <p className='text-b text-base mt-1 text-cyan-800'>{APP_NAME}</p>
                     </span>
+                 
+                   
                 </Link>
             </div>
             <Menu/>
