@@ -24,7 +24,7 @@ const SignInButton = () => {
     const { pending } = useFormStatus();
 
     return (
-        <Button disabled={pending} className="w-full" variant='default'>
+        <Button disabled={pending} className="w-full bg-cyan-800 text-white hover:text-black hover:bg-slate-500" variant='default'>
             { pending ? 'Signing In...' : 'Sign In' }
         </Button>
     )

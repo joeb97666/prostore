@@ -15,9 +15,9 @@ import { UserIcon } from "lucide-react";
 const UserButton = async () => {
     const session = await auth();
         if (!session) {
-         return ( <Button asChild >
-                    <Link href='/sign-in'>
-                        <UserIcon/> Sign In
+         return ( <Button asChild className="bg-cyan-800 font-bold hover:bg-slate-500">
+                    <Link href='/sign-in' className="text-white font-bold hover:text-black">
+                        <UserIcon className="text-white font-bold hover:stroke-black hover:font-black"/> Sign In
                     </Link>
                 </Button> );
 }
@@ -30,7 +30,7 @@ const firstInitial = session.user?.name?.charAt(0).toUpperCase() ?? 'U';
                 <div className="flex items-center">
                     <Button variant='ghost' className="relative w-8 h-8 rounded-full
                                                         ml-2 flex items-center 
-                                                        justify-center bg-gray-400">
+                                                        justify-center bg-cyan-800">
 
                         {firstInitial}
 

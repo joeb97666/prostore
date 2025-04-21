@@ -11,8 +11,10 @@ import UserButton from "@/components/shared/header/user-button"
 const Menu = () => {
     return ( <div className="flex justify-end gap-3">
         <nav className="hidden md:flex w-full max-w-xs gap-1">
-        <ModeToggle/>
-                <Button asChild variant='ghost'>
+            <div className="rounded-md bg-cyan-800 text-white hover:bg-slate-500 hover:stroke-black hover:font-black">
+                <ModeToggle />
+            </div>
+                <Button asChild variant='ghost' className="bg-cyan-800 font-bold text-white hover:bg-slate-500 hover:stroke-black hover:font-black">
                     <Link href='/cart'>
                         <ShoppingCartIcon/> Cart
                     </Link>
@@ -25,14 +27,14 @@ const Menu = () => {
         <nav className="md:hidden">
             <Sheet>
                 <SheetTrigger className="align-middle">
-                    <EllipsisVertical/>
+                    <EllipsisVertical />
                 </SheetTrigger>
                 <SheetContent className="flex flex-col items-start">
                     <SheetTitle>Menu</SheetTitle>
                     <ModeToggle/>
                     <UserButton/>
                     <Button asChild >
-                    <Link href='/sign-in'>
+                    <Link href='/'>
                         <UserIcon/> Sign In
                     </Link>
                 </Button>
