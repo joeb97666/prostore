@@ -4,7 +4,7 @@ import { prisma } from '@/db/prisma';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { compareSync } from 'bcrypt-ts-edge';
 import type { NextAuthConfig } from 'next-auth';
-//import { cookies } from 'next/headers';
+import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 export const config = {
@@ -96,7 +96,8 @@ export const config = {
                 if (!request.cookies.get('sessionCartId')) {
                     //Generate new session cart id cookie.
                     const sessionCartId = crypto.randomUUID();
-
+                    console.log(sessionCartId)
+                    return true;
                     // Clone the req headers
                     const NewRequestHeaders = new Headers(request.headers);
 

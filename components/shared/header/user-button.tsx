@@ -1,3 +1,5 @@
+//user-button.tsx
+
 import Link from "next/link";
 import { auth } from "@/app/auth";
 import { signOutUser } from "@/lib/actions/user.actions";
@@ -12,15 +14,15 @@ import { UserIcon } from "lucide-react";
 
 const UserButton = async () => {
     const session = await auth();
-    if (!session) {
-    return ( <Button asChild >
+        if (!session) {
+         return ( <Button asChild >
                     <Link href='/sign-in'>
                         <UserIcon/> Sign In
                     </Link>
                 </Button> );
 }
 
-    const firstInitial = session.user?.name?.charAt(0).toUpperCase() ?? 'U';
+const firstInitial = session.user?.name?.charAt(0).toUpperCase() ?? 'U';
 
     return <div className="flex gap-2 items-center">
         <DropdownMenu>
