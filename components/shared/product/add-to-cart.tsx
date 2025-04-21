@@ -1,11 +1,11 @@
 'use client';
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-
+//import { Plus } from "lucide-react";
 import { CartItem } from "@/types";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-import addItemToCart from "@/lib/actions/cart-actions";
+import addItemToCart from "@/lib/actions/cart.actions";
 
 
 
@@ -39,7 +39,11 @@ const AddToCart = ({item }: { item: CartItem }) => {
         })
     }
 
-    return <Button className="w-full text-black bg-orange-400 hover:bg-orange-300" type="button" onClick={handleAddToCart}>Add To Cart</Button>
+    return <Button className="w-full text-black bg-orange-400 hover:bg-orange-300" 
+                    type="button" 
+                    onClick={handleAddToCart}>
+                       + Add To Cart
+            </Button>
 }
 
 export default AddToCart;

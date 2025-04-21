@@ -5,7 +5,10 @@ import { prisma } from '@/db/prisma';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { compareSync } from 'bcrypt-ts-edge';
 import type { NextAuthConfig } from 'next-auth';
-//import { cookies } from 'next/headers';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { cookies } from 'next/headers';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { NextResponse } from 'next/server';
 import NextAuth from 'next-auth';
 
@@ -56,12 +59,9 @@ export const config = {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         async session({ session, user, trigger, token}: any) {
             //Set the user ID from the token
-
             session.user.id = token.sub;
             session.user.role = token.role;
             session.user.name = token.name;
-
-
 
             //If there is an update, set the user name.
             if (trigger === 'update' ) {
@@ -69,11 +69,10 @@ export const config = {
                 }
 
                 return session;
-
             },
             
             // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-            async jwt( { token, user, trigger, session }: any) {
+            async jwt({ token, user, trigger, session }: any) {
                 // Assign user fields to token 
                 if (user){
                     token.role = user.role;
@@ -85,7 +84,7 @@ export const config = {
                 // Update user to reflect the token name
                 await prisma.user.update({
                     where: { id: user.id },
-                    data: {name: token.name }
+                    data: { name: token.name },
                 });
                 }
             }
@@ -93,21 +92,18 @@ export const config = {
         },
 
             // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-            authorized({ request, auth}: any ){
-
+            authorized({ request, auth }: any ){
 
                 // Check for session cart cookie.
                 if (!request.cookies.get('sessionCartId')) {
                     //Generate new session cart id cookie.
-                    const sessionCartId = crypto.randomUUID();
-                    console.log(sessionCartId)
-                    return true;
+                    const sessionCartId = crypto.randomUUID(); 
+
                     // Clone the req headers
                     const NewRequestHeaders = new Headers(request.headers);
 
-                    
-                    // Create new response and add the new headers
-                    const response = NextResponse.next({
+                     // Create new response and add the new headers
+                     const response = NextResponse.next({
                         request: {
                             headers: NewRequestHeaders
                         }
@@ -118,14 +114,12 @@ export const config = {
 
                 return response;
 
-        } else{
-                        return true;
-                    }
-                }
-            },
-            
-
-        } satisfies NextAuthConfig;
+                }else{
+                    return true;
+              }
+           },
+        }, 
+    }satisfies NextAuthConfig;
 
 
 export const { handlers, auth, signIn, signOut } = NextAuth(config);
