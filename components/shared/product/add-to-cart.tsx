@@ -39,7 +39,7 @@ const AddToCart = ({item }: { item: CartItem }) => {
         })
     }
 
-    return <Button className="w-full" type="button" onClick={handleAddToCart}>Add To Cart</Button>
+    return <Button className="w-full text-black bg-orange-400 hover:bg-orange-300" type="button" onClick={handleAddToCart}>Add To Cart</Button>
 }
 
 export default AddToCart;

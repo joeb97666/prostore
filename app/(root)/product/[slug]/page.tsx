@@ -48,17 +48,19 @@ const ProductDetailsPage = async (props: {
           {/* Action Column */}
           <div>
             <Card>
-              <CardContent className='p-4'>
+              <CardContent className='bg-slate-600 text-white rounded-lg p-4'>
                 <div className='mb-2 flex justify-between'>
                   <div>Price</div>
                   <div>
                     <ProductPrice value={Number(product.price)} />
                   </div>
                 </div>
-                <div className='mb-2 flex justify-between'>
+                <div className='mb-2 text-white flex justify-between'>
                   <div>Status</div>
                   {product.stock > 0 ? (
-                    <Badge variant='outline'>In Stock</Badge>
+                    <Badge 
+                    className='text-white' 
+                    variant='outline'>In Stock</Badge>
                   ) : (
                     <Badge variant='destructive'>Out Of Stock</Badge>
                   )}
