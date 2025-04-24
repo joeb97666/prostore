@@ -10,4 +10,3 @@ console.log(randomUUID());
 export default GenerateRandomProductId;
 
 
-

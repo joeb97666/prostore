@@ -99,6 +99,7 @@ export const config = {
                     //Generate new session cart id cookie.
                     const sessionCartId = crypto.randomUUID(); 
 
+                    
                     // Clone the req headers
                     const NewRequestHeaders = new Headers(request.headers);
 
@@ -109,8 +110,8 @@ export const config = {
                         }
                     });
 
-                // Set newly generated sessionCardId in the response cookies
-                response.cookies.set('seessionCartId', sessionCartId);
+                // Set newly generated sessionCartId in the response cookies
+                response.cookies.set('sessionCartId', sessionCartId);
 
                 return response;
 

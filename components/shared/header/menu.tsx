@@ -15,7 +15,7 @@ const Menu = () => {
                 <ModeToggle />
             </div>
                 <Button asChild variant='ghost' className="bg-cyan-800 font-bold text-white hover:bg-slate-500 hover:stroke-black hover:font-black">
-                    <Link href='/cart'>
+                <Link href='/cart'>
                         <ShoppingCartIcon/> Cart
                     </Link>
                 </Button>
@@ -33,11 +33,14 @@ const Menu = () => {
                     <SheetTitle>Menu</SheetTitle>
                     <ModeToggle/>
                     <UserButton/>
-                    <Button asChild >
-                    <Link href='/'>
-                        <UserIcon/> Sign In
+                    <Button asChild 
+                            variant='ghost' 
+                            className="bg-cyan-800 font-bold text-white hover:bg-slate-500
+                                         hover:stroke-black hover:font-black" >
+                    <Link href='/cart'>
+                        <ShoppingCartIcon/> Cart
                     </Link>
-                </Button>
+                    </Button>
                 </SheetContent>
                 
             </Sheet>

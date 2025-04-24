@@ -7,7 +7,7 @@ import { Product } from "@/types";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ProductCard = ({ product }: { product: Product; }) => {
 
-    return ( <Card className="w-full max-w-sm">
+    return ( <Card className="w-full border-solid border-4 border-gray-400 max-w-sm">
         <CardHeader className="p-0 items-center">
             <Link href={`/product/${product.slug}`}>
                 <Image src={product.images[0]} alt={product.name} height={300} width={300} priority={true}/>
