@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { CartItem } from "@/types";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-import addItemToCart from "@/lib/actions/cart.actions";
+import { addItemToCart } from "@/lib/actions/cart.actions";
 
 
 
