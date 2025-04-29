@@ -1,3 +1,4 @@
+// @/types/index.tsx
 import { z } from 'zod';
 import { cartItemSchema, insertCartSchema, insertProductSchema } from '@/lib/validators';
 
