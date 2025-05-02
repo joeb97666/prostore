@@ -12,10 +12,12 @@ import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 import NextAuth from 'next-auth';
 
+
+
 export const config = {
     pages: {
-        signIn: '/auth/sign-in',
-        error: '/auth/sign-in', // Error code passed in query string as ?error=
+        signIn: '/sign-in',
+        error: '/sign-in', // Error code passed in query string as ?error=
         },
     session: {
         strategy: 'jwt',
@@ -87,9 +89,9 @@ export const config = {
                     data: { name: token.name },
                 });
                 }
-                if (trigger === 'signIn' || trigger === 'signUp') {
+                if (trigger === 'sign-in' || trigger === 'sign-up') {
                     const cookiesObject = await cookies();
-                    const sessionCartId = await cookiesObject.get('sessionCartId')?.value;
+                    const sessionCartId = cookiesObject.get('sessionCartId')?.value;
 
                     if(sessionCartId){
                         const sessionCart = await prisma.cart.findFirst({
@@ -119,6 +121,24 @@ export const config = {
 
             // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
             authorized({ request, auth }: any ){
+
+                // Array of protected paths
+                const protectedPaths = [
+                /\/shipping-address/,
+                /\/payment-method/,
+                /\/place-order/,
+                /\/profile/,
+                /\/user\/(.*)/,
+                /\/order\/(.*)/,
+                /\/admin/
+                ];
+
+                // Get Pathname from the request url object
+                const { pathname } = request.nextUrl;
+
+                //Check if user is not authenticated and accessing a protected path
+                if (!auth && protectedPaths.some((p) => p.test(pathname))) return false;
+
 
                 // Check for session cart cookie.
                 if (!request.cookies.get('sessionCartId')) {
