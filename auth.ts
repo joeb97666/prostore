@@ -87,7 +87,33 @@ export const config = {
                     data: { name: token.name },
                 });
                 }
+                if (trigger === 'signIn' || trigger === 'signUp') {
+                    const cookiesObject = await cookies();
+                    const sessionCartId = await cookiesObject.get('sessionCartId')?.value;
+
+                    if(sessionCartId){
+                        const sessionCart = await prisma.cart.findFirst({
+                            where: { sessionCartId },
+
+                        });
+                    if (sessionCart) {
+                        await prisma.cart.deleteMany({
+                            where: {userId: user.id},
+
+                        });
+
+                    // Assign Cart
+                    await prisma.cart.update({
+                        where: { id: sessionCart.id },
+                        data: { userId: user.id },
+                    })
+                    }
+                    }
+                }
+
+
             }
+
                 return token;    
         },
 
