@@ -17,3 +17,11 @@ export const SignUpDefaultValues = {
     confirmPassword: '',
     
 }
+
+export const shippingAddressDefaultValues = {
+    fullName: 'John Doe',
+    StreetAddress: '123 Main Street',
+    city: 'Anytown',
+    postalCode: '12345',
+    country: 'USA',
+};

@@ -25,9 +25,7 @@ import { formatCurrency } from '@/lib/utils';
 function AddButton({ item }: { item: CartItem }) {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
-  
   return (
-    
     <Button
       disabled={isPending}
       variant='outline'
@@ -90,7 +88,6 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
 
   return (
     <>
-    
       <h1 className='py-4 h2-bold'>Shopping Cart</h1>
       {!cart || cart.items.length === 0 ? (
         <div>
