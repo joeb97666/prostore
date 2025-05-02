@@ -6,6 +6,7 @@ import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { hashSync } from "bcrypt-ts-edge";
 import { prisma } from "@/db/prisma";
 import { formatError } from "../utils";
+import { ShippingAddress } from "@/types";
 
 
 
@@ -83,6 +84,7 @@ if(!user) throw new Error('User not found')
 }
 
 // Update the user's address 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function updateUserAddress(data: ShippingAddress) {
     try{
         const session = await auth();
