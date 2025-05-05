@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+/* import { Metadata } from "next";
 import { getOrderById } from "@/lib/actions/order.actions";
 import { notFound } from "next/navigation";
 import { ShippingAddress } from "@/types";
@@ -23,4 +23,4 @@ const OrderDetailsPage = ( props: {
     return ( <>Details {order.totalPrice}/> );
 }
  
-export default OrderDetailsPa<>Details Page</>ge;
+export default OrderDetailsPa<>Details Page</>ge; */
