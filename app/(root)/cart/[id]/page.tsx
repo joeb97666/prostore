@@ -1,4 +1,5 @@
-/* import { Metadata } from "next";
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// import { Metadata } from "next";
 import { getOrderById } from "@/lib/actions/order.actions";
 import { notFound } from "next/navigation";
 import { ShippingAddress } from "@/types";
