@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-// import { Metadata } from "next";
+import { Metadata } from "next";
 import { getOrderById } from "@/lib/actions/order.actions";
 import { notFound } from "next/navigation";
-import { ShippingAddress } from "@/types";
+//import { ShippingAddress } from "@/types";
 
 export const metadata: Metadata = {
     title: 'Order Details',
 };
 
 
-const OrderDetailsPage = ( props: {
+const OrderDetailsPage = async ( props: {
     params: Promise<{
         id: string;
     }>;
@@ -21,7 +21,7 @@ const OrderDetailsPage = ( props: {
     const order = await getOrderById(id);
     if ( !order ) notFound();
 
-    return ( <>Details {order.totalPrice}/> );
+    return ( <>Details {order.totalPrice}</> );
 }
  
-export default OrderDetailsPa<>Details Page</>ge; */
+export default OrderDetailsPage;
