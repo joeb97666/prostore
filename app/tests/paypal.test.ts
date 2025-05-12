@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // paypal.test.ts
 import { generateAccessToken, paypal } from '@/lib/paypal';
 
