@@ -32,17 +32,10 @@ export const prisma = new PrismaClient({ adapter }).$extends({
         },
       },
     },
-    cart: {
+  cart: {
       itemsPrice: {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        
         needs: { itemsPrice: true },
         compute(cart) {
-
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        
           return cart.itemsPrice.toString();
         },
       },

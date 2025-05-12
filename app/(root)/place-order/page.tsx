@@ -14,6 +14,8 @@ import Image from "next/image";
 import { formatCurrency } from "@/lib/utils";
 import PlaceOrdrForm from "./place-order-form";
 
+
+
 export const metadata: Metadata = {
     title: 'Place Order',
 };
