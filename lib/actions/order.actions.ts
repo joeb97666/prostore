@@ -133,7 +133,8 @@ export async function createPayPalOrder( orderId: string ) {
 
             return {
                 success: true,
-                message: 'Item Order Created Successfully!'
+                message: 'Item Order Created Successfully!',
+                data: paypalOrder.id,
             }
         } else {
             throw new Error('Order not found!')

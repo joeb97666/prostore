@@ -10,11 +10,10 @@ import { Order } from "@/types";
 
 import Link from "next/link";
 import { createPayPalOrder, 
-            approvePayPalOrder
- } from "@/lib/actions/order.actions";
+            approvePayPalOrder } from "@/lib/actions/order.actions";
 import { PayPalButtons, 
             PayPalScriptProvider, 
-                usePayPalScriptReducer } from "@paypal/react-paypal-js"
+                usePayPalScriptReducer } from "@paypal/react-paypal-js";
 
 
 const OrderDetailsTable = ({ 
