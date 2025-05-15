@@ -30,7 +30,7 @@ const firstInitial = session.user?.name?.charAt(0).toUpperCase() ?? 'U';
                 <div className="flex items-center">
                     <Button variant='ghost' className="relative w-8 h-8 rounded-full
                                                         ml-2 flex items-center 
-                                                        justify-center bg-cyan-800">
+                                                        justify-center text-white  hover:bg-slate-500  bg-cyan-800">
 
                         {firstInitial}
 
