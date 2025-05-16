@@ -2,12 +2,13 @@
 import { useState, useEffect } from "react";
 import { SunIcon,MoonIcon, SunMoon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {    DropdownMenu, 
+import { DropdownMenu, 
             DropdownMenuCheckboxItem,
-            DropdownMenuSeparator,
-            DropdownMenuTrigger,
-            DropdownMenuLabel,
-            DropdownMenuContent, } from "@/components/ui/dropdown-menu";
+                DropdownMenuSeparator,
+                   DropdownMenuTrigger,
+                        DropdownMenuLabel,
+                            DropdownMenuContent, 
+                                } from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
 
 const ModeToggle = () => {

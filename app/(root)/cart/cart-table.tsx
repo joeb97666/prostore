@@ -9,12 +9,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   Table,
-  TableBody,
-  TableHead,
-  TableHeader,
-  TableRow,
-  TableCell,
-} from '@/components/ui/table';
+    TableBody,
+      TableHead,
+        TableHeader,
+          TableRow,
+            TableCell,
+              } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { formatCurrency } from '@/lib/utils';

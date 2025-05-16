@@ -14,7 +14,7 @@ const HomePage = async () => {
     <ProductList 
                 data={latestProducts as unknown as Product[]}
                 title='Newest Arrivals'
-                limit={4}
+                limit={8}
               />
             </>
           );

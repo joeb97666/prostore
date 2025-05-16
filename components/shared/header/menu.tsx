@@ -7,7 +7,7 @@ import { EllipsisVertical, ShoppingCartIcon, UserIcon } from "lucide-react";
 
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
-import UserButton from "@/components/shared/header/user-button"
+import UserButton from "./user-button";
 
 
 const Menu = () => {
